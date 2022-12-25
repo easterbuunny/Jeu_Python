@@ -1,19 +1,19 @@
 import pygame
+import animation
 
 from projectile import Projectile
 
 
 # creer une classe qui represente le joueur
-class Player(pygame.sprite.Sprite):  # Pour créer un nouveau composant
+class Player(animation.AnimateSprite):  # Pour créer un nouveau composant
     # Constructor
     def __init__(self, game):
-        super().__init__()
+        super().__init__("player")
         self.game = game
         self.health = 100  # PV
         self.maxHealth = 100  # PV max
         self.attack = 20  # degat attaque
         self.velocity = 2  # vitesse de mouvement en pixel
-        self.image = pygame.image.load("PygameAssets-main/player.png")  # image du joueur
         self.rect = self.image.get_rect()
         self.rect.x = 400  # position axe x
         self.rect.y = 500  # position axe y
@@ -36,6 +36,9 @@ class Player(pygame.sprite.Sprite):  # Pour créer un nouveau composant
 
     def moveLeft(self):
         self.rect.x -= self.velocity
+
+    def updateAnimate(self):
+        self.animate()
 
     def updateHealthBar(self, surface):
         # definir une couleur pour une jauge de vie

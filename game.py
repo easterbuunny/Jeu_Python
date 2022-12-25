@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 from cometEvent import CometFallEvent
@@ -21,8 +23,8 @@ class Game:
 
     def start(self):
         self.isPlaying = True
-        self.spawnMonster()
-        self.spawnMonster()
+        for i in range(0, random.randint(0, 5)):
+            self.spawnMonster()
 
     def spawnMonster(self):
         monster = Monster(self)
@@ -37,6 +39,7 @@ class Game:
         screen.blit(self.player.image, self.player.rect)
 
         self.player.updateHealthBar(screen)
+        self.player.animate()
 
         self.cometEvent.updateBar(screen)
 
@@ -48,6 +51,7 @@ class Game:
         for monster in self.allMonsters:
             monster.forward()
             monster.updateHealthBar(screen)
+            monster.updateAnimation()
 
         for comet in self.cometEvent.allComet:
             comet.fall()

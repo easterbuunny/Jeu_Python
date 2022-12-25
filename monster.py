@@ -4,11 +4,11 @@ import pygame
 
 
 # creer une classe qui va gere la notion de monstre sur notre jeu
-class Monster(pygame.sprite.Sprite):
+class Monster(animation.AnimateSprite):
 
     # constructor
     def __init__(self, game):
-        super().__init__()
+        super().__init__("mummy")
         self.game = game
         self.health = 100
         self.maxHealth = 100
@@ -17,7 +17,7 @@ class Monster(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 1000 + random.randint(0, 300)
         self.rect.y = 540
-        self.velocity = random.randint(1, 3)
+        self.velocity = random.randint(1, 2)
 
     def damage(self, amount):
         self.health -= amount
@@ -28,6 +28,9 @@ class Monster(pygame.sprite.Sprite):
             if self.game.cometEvent.isFull:
                 self.game.allMonsters.remove(self)
                 self.game.cometEvent.attemptFall()
+
+    def updateAnimation(self):
+        self.animate()
 
     def updateHealthBar(self, surface):
         # definir une couleur pour une jauge de vie
