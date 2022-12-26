@@ -34,12 +34,15 @@ python3 main.py
 
 ![Installation Repertoire](images/zip.png)
 
-### Lancer l'application
-- Ouvrir l'invite de commande :
-```Windows Key + R``` ensuite ```cmd```
+### Préinstallation 
 - Verifier si python est bien installer sur la machine ```python --version```
   - Si python est déjà installer vous devez avoir ceci afficher à l'écran ```Python 3.9.13```
   - Sinon installer le : [Ptyhon Download](https://www.python.org/downloads/)
+
+### Lancer l'application
+- Ouvrir l'invite de commande :
+```Windows Key + R``` ensuite ```cmd```
+
 - Vous pouvez voir le contenu du repertoire avec la commande ```dir```
 - Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd```
 - Installer le gestionnaire de packet avec la commande 
