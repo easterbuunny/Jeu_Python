@@ -41,11 +41,14 @@ class Game:
 
     def gameOver(self):
         print("[Level] : " + str(self.cometEvent.counter))
+        print("[Score] : " + str(self.score))
         self.allMonsters = pygame.sprite.Group()  # remove all monster
         self.player.health = self.player.maxHealth
         self.isPlaying = False
+        self.allPlayers = pygame.sprite.Group()
+        self.cometEvent.allComet = pygame.sprite.Group()
+        self.cometEvent.counter = 1
         self.score = 0
-        print("[Score] : " + str(self.score))
 
     def update(self, screen):
         # text et police score
