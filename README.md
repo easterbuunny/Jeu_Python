@@ -52,3 +52,6 @@ Le but du jeu est de survivre dans la partie en tuant les ennemis.
 ### Commandes
 - Deplacer à gauche et a droite : Flèche gauche & Flèche droite
 - Attaquer : Barre d'espace
+- Jouer : "Play" ou ```K_RETURN```  
+- Accueil : ```K_Q```
+- Fermer le jeu : Sur l'écran d'acceuil ```K_Q```

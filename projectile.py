@@ -31,6 +31,8 @@ class Projectile(pygame.sprite.Sprite):
         for monster in self.player.game.checkCollision(self, self.player.game.allMonsters):
             self.remove()
             monster.damage(self.player.attack)
+        if len(self.player.allProjectiles) >= 5 :
+            self.remove()
         # si le projectile sort l'écran
         if self.rect.x > 1290:
             self.remove()

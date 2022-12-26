@@ -11,6 +11,7 @@ class CometFallEvent:
         self.allComet = pygame.sprite.Group()
         self.game = game
         self.fallMode = False
+        self.counter = 1
 
     def addPercent(self):
         self.percent += self.percentSpeed / 100
@@ -22,13 +23,13 @@ class CometFallEvent:
         self.percent = 0
 
     def enableMeteor(self):
+        self.counter += 1
         for i in range(1, 10):
             comet = Comet(self)
             self.allComet.add(comet)
 
     def attemptFall(self):
         if self.isFull() and len(self.game.allMonsters) == 0:
-            print("Pluie de cometes !")
             self.enableMeteor()
             self.fallMode = True
 

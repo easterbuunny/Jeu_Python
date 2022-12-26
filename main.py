@@ -7,6 +7,10 @@ from game import Game
 print("\n\n===========================")
 pygame.init()
 
+# definir une clock
+clock = pygame.time.Clock()
+FPS = 160
+
 # genere la fenetre de notre jeu
 pygame.display.set_caption("Py Game")
 print("[Title] : Py Game")
@@ -59,8 +63,19 @@ while running:
             # detecter la touche espace pour lancer le projectile
             if event.key == pygame.K_SPACE:
                 game.player.launchProjectile()
+            if event.key == pygame.K_RETURN:
+                if not game.isPlaying:
+                    game.start()
+            if event.key == pygame.K_q:
+                if game.isPlaying :
+                    game.gameOver()
+                else :
+                    pygame.quit()
         elif event.type == pygame.KEYUP:
             game.pressed[event.key] = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if buttonRect.collidepoint(event.pos):
                 game.start()
+
+    # fixer le nombre de FPS
+    clock.tick(FPS)

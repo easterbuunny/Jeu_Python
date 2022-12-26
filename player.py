@@ -22,6 +22,7 @@ class Player(animation.AnimateSprite):  # Pour créer un nouveau composant
     def launchProjectile(self):
         projectile = Projectile(self)
         self.allProjectiles.add(projectile)
+        self.startAnimation()
 
     def damage(self, amount):
         if self.health - amount > amount:

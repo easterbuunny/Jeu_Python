@@ -3,7 +3,7 @@ import random
 import pygame
 
 from cometEvent import CometFallEvent
-from monster import Monster
+from monster import Mummy, Alien
 from player import Player
 
 
@@ -16,6 +16,8 @@ class Game:
         self.cometEvent = CometFallEvent(self)
         self.allMonsters = pygame.sprite.Group()  # groupe de monster
         self.pressed = {}  # les touches appuyés
+        self.score = 0
+        self.font = pygame.font.SysFont("monospace", 32)
 
     # creer une classe qui represente le jeu
     def checkCollision(self, sprite, group):
@@ -23,19 +25,36 @@ class Game:
 
     def start(self):
         self.isPlaying = True
-        for i in range(0, random.randint(0, 5)):
-            self.spawnMonster()
+        for i in range(0, random.randint(2, 5)):
+            self.spawnMonster(Mummy)
+        if self.cometEvent.counter >=3 :
+            self.spawnMonster(Alien)
+        if self.cometEvent.counter >=6 :
+            self.spawnMonster(Alien)
+            self.spawnMonster(Alien)
 
-    def spawnMonster(self):
-        monster = Monster(self)
-        self.allMonsters.add(monster)
+    def addScore(self, points):
+        self.score += points
+
+    def spawnMonster(self, monsterName):
+        self.allMonsters.add(monsterName.__call__(self))
 
     def gameOver(self):
+        print("[Level] : " + str(self.cometEvent.counter))
         self.allMonsters = pygame.sprite.Group()  # remove all monster
         self.player.health = self.player.maxHealth
         self.isPlaying = False
+        self.score = 0
 
     def update(self, screen):
+        # text et police score
+
+        scoreText = self.font.render(f"Score :{self.score}", True, (0, 0, 0))
+        screen.blit(scoreText, (20, 20))
+
+        level = self.font.render(f"Level :{self.cometEvent.counter}", True, (0, 0, 0))
+        screen.blit(level, (800, 20))
+
         screen.blit(self.player.image, self.player.rect)
 
         self.player.updateHealthBar(screen)
