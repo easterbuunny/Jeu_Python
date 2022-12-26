@@ -45,6 +45,7 @@ class Game:
         self.player.health = self.player.maxHealth
         self.isPlaying = False
         self.score = 0
+        print("[Score] : " + str(self.score))
 
     def update(self, screen):
         # text et police score
