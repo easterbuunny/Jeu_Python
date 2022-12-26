@@ -61,6 +61,7 @@ pip --version
 ```shell
 python -m pip install pygame
 ```
+  A la fin de l'installation vous devez avoir ```Successfully installed pygame-2.1.2```
 - Lancer l'application avec la commande 
 ```shell 
 py main.py
