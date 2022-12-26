@@ -40,7 +40,7 @@ python3 main.py
 python --version
 ```
   - Si python est déjà installer vous devez avoir ceci afficher à l'écran ```Python 3.9.13```
-  - Sinon installer le : [Ptyhon Download](https://www.python.org/downloads/) ou dans Microsoft Store
+  - Sinon installer le : [Python Download](https://www.python.org/downloads/) ou dans Microsoft Store
 - Verifier si pip est installer sur la machine avec 
 ```shell
 pip --version
@@ -49,14 +49,14 @@ pip --version
   - Sinon installer le : 
   ```shell
   python get-pip.py
-  ```. A la fin de l'installation vous devez avoir ```Successfully installed pip-22.3.1 wheel-0.38.4```
+  ```
+  A la fin de l'installation vous devez avoir ```Successfully installed pip-22.3.1 wheel-0.38.4```
 
 ### Lancer l'application
 - Ouvrir l'invite de commande :
 ```Windows Key + R``` ensuite ```cmd```
-
 - Vous pouvez voir le contenu du repertoire avec la commande ```dir```
-- Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd```
+- Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd <directory>```
 - Installer le gestionnaire de packet avec la commande 
 ```shell
 python -m pip install pygame
