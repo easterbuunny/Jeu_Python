@@ -30,20 +30,41 @@ python3 main.py
 
 ## Sous windows <a name="sous-windows"></a>
 ### Installation 
-- Télécharger le répertoire ```Jeu_Python.zip``` et décompresser.
+- Télécharger le répertoire ```Jeu_Python.zip``` et décompresser
+
 ![Installation Repertoire](images/zip.png)
+
+### Préinstallation 
+- Verifier si python est bien installer sur la machine : 
+```shell
+python --version
+```
+  - Si python est déjà installer vous devez avoir ceci afficher à l'écran ```Python 3.9.13```
+  - Sinon installer le : [Python Download](https://www.python.org/downloads/) ou dans Microsoft Store
+- Verifier si pip est installer sur la machine avec 
+```shell
+pip --version
+```
+  - Si pip est déjà installer vous devez avoir ```pip 22.3.1 ...```
+  - Sinon installer le : 
+  ```shell
+  python get-pip.py
+  ```
+  A la fin de l'installation vous devez avoir ```Successfully installed pip-22.3.1 wheel-0.38.4```
+
 ### Lancer l'application
 - Ouvrir l'invite de commande :
 ```Windows Key + R``` ensuite ```cmd```
 - Vous pouvez voir le contenu du repertoire avec la commande ```dir```
-- Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd```
+- Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd <directory>```
 - Installer le gestionnaire de packet avec la commande 
 ```shell
-pip install pygame
+python -m pip install pygame
 ```
+  A la fin de l'installation vous devez avoir ```Successfully installed pygame-2.1.2```
 - Lancer l'application avec la commande 
 ```shell 
-py main.py
+python main.py
 ```
 
 ## Règle du jeu
@@ -51,7 +72,7 @@ py main.py
 Le but du jeu est de survivre dans la partie en tuant les ennemis.
 ### Commandes
 - Deplacer à gauche et a droite : Flèche gauche & Flèche droite
-- Attaquer : Barre d'espace
+- Attaquer : ```K_SPACE```
 - Jouer : "Play" ou ```K_RETURN```  
 - Accueil : ```K_Q```
 - Fermer le jeu : Sur l'écran d'acceuil ```K_Q```
