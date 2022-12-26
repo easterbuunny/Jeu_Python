@@ -30,19 +30,21 @@ python3 main.py
 
 ## Sous windows <a name="sous-windows"></a>
 ### Installation 
-- Télécharger le répertoire ```Jeu_Python.zip``` et décompresser.
+- Télécharger le répertoire ```Jeu_Python.zip``` et décompresser
+
 ![Installation Repertoire](images/zip.png)
+
 ### Lancer l'application
 - Ouvrir l'invite de commande :
 ```Windows Key + R``` ensuite ```cmd```
 - Verifier si python est bien installer sur la machine ```python --version```
-  - Si python est déjà installer vous devez avoir ceci afficher à l'écran :
-  ![python installer](images/pythonCommand.png)
+  - Si python est déjà installer vous devez avoir ceci afficher à l'écran ```Python 3.9.13```
+  - Sinon installer le : [Ptyhon Download](https://www.python.org/downloads/)
 - Vous pouvez voir le contenu du repertoire avec la commande ```dir```
 - Déplacer dans le repertoire que vous venez de télécharger avec la commande ```cd```
 - Installer le gestionnaire de packet avec la commande 
 ```shell
-pip install pygame
+python -m pip install pygame
 ```
 - Lancer l'application avec la commande 
 ```shell 
